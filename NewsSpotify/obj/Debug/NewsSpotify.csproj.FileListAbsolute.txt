@@ -1,0 +1,10 @@
+C:\Users\computing\Desktop\NewsSpotify\NewsSpotify\bin\Debug\NewsSpotify.exe.config
+C:\Users\computing\Desktop\NewsSpotify\NewsSpotify\bin\Debug\NewsSpotify.exe
+C:\Users\computing\Desktop\NewsSpotify\NewsSpotify\bin\Debug\NewsSpotify.pdb
+C:\Users\computing\Desktop\NewsSpotify\NewsSpotify\obj\Debug\NewsSpotify.csprojAssemblyReference.cache
+C:\Users\computing\Desktop\NewsSpotify\NewsSpotify\obj\Debug\NewsSpotify.Form1.resources
+C:\Users\computing\Desktop\NewsSpotify\NewsSpotify\obj\Debug\NewsSpotify.Properties.Resources.resources
+C:\Users\computing\Desktop\NewsSpotify\NewsSpotify\obj\Debug\NewsSpotify.csproj.GenerateResource.cache
+C:\Users\computing\Desktop\NewsSpotify\NewsSpotify\obj\Debug\NewsSpotify.csproj.CoreCompileInputs.cache
+C:\Users\computing\Desktop\NewsSpotify\NewsSpotify\obj\Debug\NewsSpotify.exe
+C:\Users\computing\Desktop\NewsSpotify\NewsSpotify\obj\Debug\NewsSpotify.pdb
