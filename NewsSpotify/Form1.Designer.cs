@@ -37,6 +37,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -44,9 +45,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(180, 13);
+            this.label1.Size = new System.Drawing.Size(204, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Search Terms: (AND between terms)";
+            this.label1.Text = "Search Terms: (terms are AND\'d together)";
             this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // textBox1
@@ -54,7 +55,7 @@
             this.textBox1.Location = new System.Drawing.Point(15, 57);
             this.textBox1.MaxLength = 30;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(179, 20);
+            this.textBox1.Size = new System.Drawing.Size(201, 20);
             this.textBox1.TabIndex = 1;
             // 
             // label2
@@ -79,21 +80,12 @@
             "7",
             "8",
             "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20"});
+            "10"});
             this.comboBox1.Location = new System.Drawing.Point(15, 101);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(42, 21);
             this.comboBox1.TabIndex = 3;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
             // checkBox1
             // 
@@ -110,7 +102,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(13, 129);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(181, 23);
+            this.button1.Size = new System.Drawing.Size(203, 23);
             this.button1.TabIndex = 6;
             this.button1.Text = "Generate Tracks";
             this.button1.UseVisualStyleBackColor = true;
@@ -145,11 +137,22 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "(one per line)";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label5.Location = new System.Drawing.Point(15, 158);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "label5";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(424, 168);
+            this.ClientSize = new System.Drawing.Size(424, 183);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label3);
@@ -177,6 +180,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }
 
