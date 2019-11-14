@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,6 +30,9 @@ namespace NewsSpotify
             MaximizeBox = false;
             MinimizeBox = false;
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            // the ready / building... label setup
+            label5.Text = "READY";
+            label5.ForeColor = Color.Green;
         }
 
         private void Label1_Click(object sender, EventArgs e)
@@ -69,9 +74,25 @@ namespace NewsSpotify
             start_info.CreateNoWindow = true;
             start_info.WorkingDirectory = "ns_main";
             Process python_proc = new Process();
+            // json input stored here
+            String json_input = "";
 
             // add the max tracks option to the arguments
             start_info.Arguments += "--max=" + max_track_out + " ";
+
+            // ALWAYS add the --json flag because that's how the UX
+            // gets the output from the NewsSpotify application
+            start_info.Arguments += "--json ";
+
+            // since the user is about to have to wait for ~10 seconds
+            // let them know the application is doing something
+            label5.Text = "BUILDING...";
+            label5.ForeColor = Color.Red;
+            // the application will not redraw until we
+            // exit the function, so we force it to redraw
+            // so the change takes effect before we go into
+            // the waiting portion
+            this.Refresh();
 
             // check which type of query we are doing
             if (checkBox1.Checked)
@@ -89,14 +110,6 @@ namespace NewsSpotify
                     if (!String.IsNullOrWhiteSpace(line)) excl_sources.Add(line);
                 }
                 // now we build the command and run it
-                // DEBUG!
-                Debug.WriteLine("Excluded Sources:");
-                foreach (String line in excl_sources)
-                {
-                    Debug.WriteLine(line);
-                }
-                Debug.WriteLine("End of excluded sources.");
-                Debug.WriteLine("Max Tracks: ", max_track_out);
                 // write excluded sources to a file in ns_main directory
                 System.IO.File.WriteAllLines(@"ns_main\.exclusion", excl_sources.ToArray());
                 // add this to the arguments
@@ -108,10 +121,13 @@ namespace NewsSpotify
                 while (!python_proc.StandardOutput.EndOfStream)
                 {
                     string line = python_proc.StandardOutput.ReadLine();
-                    Debug.WriteLine(line);
+                    json_input += line;
                 }
                 python_proc.WaitForExit();
-                // DEBUG!
+                // we now have the json input
+                // call the show_data method
+                // with correct parameters
+                show_data(json_input, true);
             } else
             {
                 // we are using terms input by the user
@@ -134,6 +150,8 @@ namespace NewsSpotify
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                     // exit
+                    label5.Text = "READY";
+                    label5.ForeColor = Color.Green;
                     return;
                 } else
                 {
@@ -143,24 +161,77 @@ namespace NewsSpotify
                         start_info.Arguments += " " + term;
                     }
                 }
-                // DEBUG!
-                Debug.WriteLine("Search Terms:");
-                foreach (String line in clean_search_terms)
-                {
-                    Debug.WriteLine(line);
-                }
-                Debug.WriteLine("End of search terms.");
-                Debug.WriteLine("Max Tracks: ", max_track_out);
                 python_proc.StartInfo = start_info;
                 python_proc.Start();
                 while (!python_proc.StandardOutput.EndOfStream)
                 {
                     string line = python_proc.StandardOutput.ReadLine();
-                    Debug.WriteLine(line);
+                    json_input += line;
                 }
                 python_proc.WaitForExit();
-                // DEBUG!
+                // now we have the json input
+                // call the show data method with
+                // correct parameters
+                show_data(json_input, false);
             }
+            // at the end of the process,
+            // set the status label back to normal
+            label5.Text = "READY";
+            label5.ForeColor = Color.Green;
+        }
+
+        private void show_data(String j_input, bool has_news)
+        {
+            // our list of Tracks
+            List<Track> tracks = new List<Track>();
+            // our list of News
+            List<News> news = new List<News>();
+            // holds the deserialized JSON
+            List<Dictionary<String, JObject>> news_track;
+
+            // parse JSON input
+            try
+            {
+                news_track = JsonConvert.DeserializeObject<List<Dictionary<String, JObject>>>(j_input);
+            }
+            catch
+            {
+                // something went wrong in the deserialization
+                // which very likely means NewsSpotify threw an error
+                // notify the user
+                MessageBox.Show("NewsSpotify.exe has returned the following error: " + j_input,
+                        "Fata Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                return;
+            }
+            
+            // go through each entry and build the corresponding objects
+            foreach (var entry in news_track)
+            {
+                tracks.Add(entry["track"].ToObject<Track>());
+                if (has_news)
+                {
+                    news.Add(entry["news"].ToObject<News>());
+                }
+            }
+            // we now have the objects we need with their data
+            // create the new form and give it our data
+            DataForm data_form = new DataForm();
+            if (has_news)
+            {
+                data_form.PopulateTracksWithNews(tracks, news);
+            }
+            else
+            {
+                data_form.PopulateTracks(tracks);
+            }
+            data_form.Show();
+        }
+
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
