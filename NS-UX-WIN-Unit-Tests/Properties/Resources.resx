@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="mock_json_input_without_news" xml:space="preserve">
+    <value>[{"news": {}, "track": {"artists": ["Post Malone"], "duration": "3:35", "name": "Circles", "popularity": 100, "preview_url": "", "external_url": "https://open.spotify.com/track/21jGcNKet2qwijlDFuPiPb"}}, {"news": {}, "track": {"artists": ["Post Malone", "Ozzy Osbourne", "Travis Scott"], "duration": "3:50", "name": "Take What You Want (feat. Ozzy Osbourne &amp; Travis Scott)", "popularity": 92, "preview_url": "", "external_url": "https://open.spotify.com/track/7CZyCXKG6d5ALeq41sLzbw"}}, {"news": {}, "track": {"artists": ["Post Malone", "Young Thug"], "duration": "2:55", "name": "Goodbyes (feat. Young Thug)", "popularity": 94, "preview_url": "", "external_url": "https://open.spotify.com/track/0t3ZvGKlmYmVsDzBJAXK8C"}}, {"news": {}, "track": {"artists": ["Post Malone", "DaBaby"], "duration": "3:17", "name": "Enemies (feat. DaBaby)", "popularity": 89, "preview_url": "", "external_url": "https://open.spotify.com/track/0Xek5rqai2jcOWCYWJfVCF"}}, {"news": {}, "track": {"artists": ["Post Malone"], "duration": "2:31", "name": "Saint-Tropez", "popularity": 91, "preview_url": "", "external_url": "https://open.spotify.com/track/05mDaV9Vb3wrzjF6OPZnhq"}}]</value>
+  </data>
+  <data name="mock_json_input_with_news" xml:space="preserve">
+    <value>[{"news": {"headline": "The former US ambassador to Ukraine was recalled abruptly in May despite a distinguished career as the president pushed for Kyiv to investigate his rivals", "source": "Theguardian.com"}, "track": {"artists": ["Senses May Wither"], "duration": "3:40", "name": "Rivals", "popularity": 0, "preview_url": "https://p.scdn.co/mp3-preview/8db5f0d8666c989970b030f7c815b6617244ba5c?cid=59d69939675a46f69725901dd4e309cb", "external_url": "https://open.spotify.com/track/3DF505YdORtnimYwAX0Wmy"}}, {"news": {"headline": "Labour leader says proposed roll-out would bolster economy and help tackle climate crisis", "source": "Theguardian.com"}, "track": {"artists": ["Rick Perry"], "duration": "2:15", "name": "Climate Change vs. U.S. Economy", "popularity": 0, "preview_url": "https://p.scdn.co/mp3-preview/ebda82ee8f0117ff9daf69b062de24d93658fe86?cid=59d69939675a46f69725901dd4e309cb", "external_url": "https://open.spotify.com/track/6v3YKIsqT1VvdGGWiIQSgb"}}, {"news": {"headline": "Singer appeals to fans for help in escalation of feud with Scooter Braun and Scott Borchetta", "source": "Theguardian.com"}, "track": {"artists": ["Explord"], "duration": "3:20", "name": "Escalation", "popularity": 0, "preview_url": "https://p.scdn.co/mp3-preview/5762f4bc2754a87a962caa738f1c95f502881afd?cid=59d69939675a46f69725901dd4e309cb", "external_url": "https://open.spotify.com/track/1t69phlWDTf1SqTgK2LOLg"}}, {"news": {"headline": "More than 200 pupils and over 20 staff have been told to stay away from St Mary\u2019s RC Voluntary Aided Primary in Jarrow as winter bug sweeps school", "source": "Chroniclelive.co.uk"}, "track": {"artists": ["Thunderstorms"], "duration": "4:15", "name": "Rain Sweeps", "popularity": 0, "preview_url": "https://p.scdn.co/mp3-preview/12d2e9ab96dce7ae09286296db75c4c96720b77e?cid=59d69939675a46f69725901dd4e309cb", "external_url": "https://open.spotify.com/track/1K582rxos261litDjDZyyO"}}, {"news": {"headline": "Man Utd midfielder Nemanja Matic could leave in the January transfer window but Ole Gunnar Solskjaer might already have his replacement.", "source": "Manchestereveningnews.co.uk"}, "track": {"artists": ["Otis Redding"], "duration": "2:36", "name": "Ole Man Trouble - Mono; 2008 Remaster", "popularity": 46, "preview_url": "https://p.scdn.co/mp3-preview/37535f0391170c7bd303b9a2f721454bef18d6a0?cid=59d69939675a46f69725901dd4e309cb", "external_url": "https://open.spotify.com/track/7Mv9vH3BBuc1hGvlq6uwco"}}, {"news": {"headline": "England must beat Kosovo or face possible Euro 2020 Group of Death with both Belgium and Portugal ", "source": "Thesun.co.uk"}, "track": {"artists": ["LIL EURO VAMP"], "duration": "2:23", "name": "RoCKSTAR Till Death of Me +", "popularity": 0, "preview_url": "https://p.scdn.co/mp3-preview/377d9509dea5669de9cb5e7654c96320d7d759c1?cid=59d69939675a46f69725901dd4e309cb", "external_url": "https://open.spotify.com/track/23sqEs9ajErnps3BogaqsD"}}, {"news": {"headline": "The publicly owned Nest has thrived thanks to investments such as its \u00a31.1bn \u2018climate aware\u2019 fund", "source": "Theguardian.com"}, "track": {"artists": ["Yung Bleu", "Lil Durk"], "duration": "3:47", "name": "Smooth Operator", "popularity": 56, "preview_url": "https://p.scdn.co/mp3-preview/4f90e4031e5640b4bf0760378b79734b41a8e6ed?cid=59d69939675a46f69725901dd4e309cb", "external_url": "https://open.spotify.com/track/0WGhsKLNJCWvTh7wIRKoJq"}}, {"news": {"headline": "Motorola has thrown its hat into the folding smartphone ring with a revamped version of its iconic Razr flip phone.", "source": "Dezeen.com"}, "track": {"artists": ["Un Instrument"], "duration": "5:23", "name": "The Sadness in My Phone", "popularity": 0, "preview_url": "https://p.scdn.co/mp3-preview/249f4ef2d2fbb3de143009145bcdba206f8e3cde?cid=59d69939675a46f69725901dd4e309cb", "external_url": "https://open.spotify.com/track/3mD6udZ1C9o0tLGxd2VKnL"}}, {"news": {"headline": "UK election polls tracker: Tory support hits 40 per cent as lead over Labour widens ", "source": "Standard.co.uk"}, "track": {"artists": ["Anxiety Support Group"], "duration": "3:48", "name": "Drug Dealer's Lullaby", "popularity": 2, "preview_url": "https://p.scdn.co/mp3-preview/7857e758a5a17e1a270009503f98e177f67948f8?cid=59d69939675a46f69725901dd4e309cb", "external_url": "https://open.spotify.com/track/6PwAyOjul5j0islxBfv6TU"}}, {"news": {"headline": "BT Sport has retained the rights to the Champions League but has been unable to cut its \u00a31.2bn bill amid offers from Sky and ITV", "source": "Theguardian.com"}, "track": {"artists": ["Jeff Woodall", "PMOL Music"], "duration": "2:25", "name": "Sky High", "popularity": 3, "preview_url": "https://p.scdn.co/mp3-preview/e44266068deec04ef4c7804dd9291669a0403413?cid=59d69939675a46f69725901dd4e309cb", "external_url": "https://open.spotify.com/track/1FLdT0SDYcmX2ws225E3gJ"}}]</value>
+  </data>
+</root>

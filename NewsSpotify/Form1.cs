@@ -117,7 +117,23 @@ namespace NewsSpotify
                 // set the process information before running it
                 python_proc.StartInfo = start_info;
                 // run the process
-                python_proc.Start();
+                try
+                {
+                    python_proc.Start();
+                }
+                catch
+                {
+                    // there was an issue running the process
+                    // tell the user
+                    MessageBox.Show("NewsSpotify application could not be run, make sure the executable is in the correct place...",
+                        "Fatal Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    // exit
+                    label5.Text = "READY";
+                    label5.ForeColor = Color.Green;
+                    return;
+                }
                 while (!python_proc.StandardOutput.EndOfStream)
                 {
                     string line = python_proc.StandardOutput.ReadLine();
@@ -162,7 +178,23 @@ namespace NewsSpotify
                     }
                 }
                 python_proc.StartInfo = start_info;
-                python_proc.Start();
+                try
+                {
+                    python_proc.Start();
+                }
+                catch
+                {
+                    // there was an issue running the process
+                    // tell the user
+                    MessageBox.Show("NewsSpotify application could not be run, make sure the executable is in the correct place...",
+                        "Fatal Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    // exit
+                    label5.Text = "READY";
+                    label5.ForeColor = Color.Green;
+                    return;
+                }
                 while (!python_proc.StandardOutput.EndOfStream)
                 {
                     string line = python_proc.StandardOutput.ReadLine();
@@ -180,7 +212,7 @@ namespace NewsSpotify
             label5.ForeColor = Color.Green;
         }
 
-        private void show_data(String j_input, bool has_news)
+        public bool show_data(String j_input, bool has_news)
         {
             // our list of Tracks
             List<Track> tracks = new List<Track>();
@@ -203,7 +235,7 @@ namespace NewsSpotify
                         "Fata Error",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
-                return;
+                return false;
             }
             
             // go through each entry and build the corresponding objects
@@ -227,6 +259,7 @@ namespace NewsSpotify
                 data_form.PopulateTracks(tracks);
             }
             data_form.Show();
+            return true;
         }
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)

@@ -10,11 +10,5 @@ namespace NewsSpotify
     {
         public String headline { get; set; }
         public String source { get; set; }
-
-        //public News(String _headline, String _source)
-        //{
-        //    headline = _headline;
-        //    source = _source;
-        //}
     }
 }
