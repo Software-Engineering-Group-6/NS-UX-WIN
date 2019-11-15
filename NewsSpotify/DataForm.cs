@@ -25,7 +25,7 @@ namespace NewsSpotify
                 AnchorStyles.Left;
         }
 
-        public void PopulateTracksWithNews(List<Track> tracks, List<News> news)
+        public bool PopulateTracksWithNews(List<Track> tracks, List<News> news)
         {
             // auto size the columns
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
@@ -57,9 +57,11 @@ namespace NewsSpotify
                                 tracks[i].external_url, tracks[i].preview_url};
                 dataGridView1.Rows.Add(row);
             }
+            if (dataGridView1.Rows.Count == tracks.Count) return true;
+            else return false;
         }
 
-        public void PopulateTracks(List<Track> tracks)
+        public bool PopulateTracks(List<Track> tracks)
         {
             // auto size the columns
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
@@ -89,9 +91,11 @@ namespace NewsSpotify
                                 tracks[i].external_url, tracks[i].preview_url};
                 dataGridView1.Rows.Add(row);
             }
+            if (dataGridView1.Rows.Count == tracks.Count) return true;
+            else return false;
         }
 
-        private String list_to_multiline(List<String> list)
+        public String list_to_multiline(List<String> list)
         {
             return String.Join("\n", list.ToArray());
         }
